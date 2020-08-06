@@ -1,6 +1,6 @@
 node {
   stages {
-    stage ('1 choice : SCM Checkout') {
+    stage ('1 choice') {
       when {
                 expression { choice == '1'}
             }
@@ -8,7 +8,7 @@ node {
                 git 'https://github.com/aridhiramy/jhipster.git'
             }
     }
-    stage ('2 choice : Compile-uaa') {
+    stage ('2 choice') {
       when {
                 expression { choice == '2'}
             }
@@ -16,7 +16,7 @@ node {
                 sh 'cd uaa-gitlab && ./mvnw -Pprod clean verify'
             }
     }
-   stage ('3 choice : Compile-gateway') {
+   stage ('3 choice') {
       when {
                 expression { choice == '3'}
             }
