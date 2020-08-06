@@ -1,6 +1,6 @@
 node{
     stage('SCM Checkout'){
-        git 'git@172.16.23.101:root/namla.test.git'
+        git 'https://github.com/aridhiramy/jhipster.git'
     }
     
     stage('Compile-Package'){
