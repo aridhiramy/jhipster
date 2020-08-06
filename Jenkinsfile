@@ -1,5 +1,6 @@
-node { 
-  stages {
+pipeline {
+    agent any
+stages {
     stage ('1 choice') {
       when {
                 expression { choice == '1'}
