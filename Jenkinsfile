@@ -1,5 +1,4 @@
-pipeline {
-    agent any 
+node {
   stages {
     stage ('1 choice : SCM Checkout') {
       when {
