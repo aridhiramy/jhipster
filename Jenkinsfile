@@ -25,5 +25,14 @@ stages {
                 sh 'cd gateway-gitlab && ./mvnw -Pprod clean verify'
             }
         }
+   stage ('4 choice') {
+      when {
+                expression { choice == '3'}
+            }
+            steps {
+                sh 'cd uaa-gitlab && ./mvnw package -Pprod -DskipTests jib:dockerBuild'
+            }
+        } 
+ 
   }
 }
