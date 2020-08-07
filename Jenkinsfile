@@ -57,7 +57,7 @@ stages {
                     withKubeConfig([credentialsId: 'kube',
                     serverUrl: 'https://172.16.23.77:6443'
                     ]) {
-                sh 'kubectl get pods --all-namespaces'
+                sh 'cd kubernetes && bash kubectl-apply.sh -f'
                 }
             }
         }
