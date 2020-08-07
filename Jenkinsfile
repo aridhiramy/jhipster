@@ -1,7 +1,7 @@
 pipeline {
     agent any
 stages {
-    stage ('1 choice') {
+    stage ('Checkout SCM') {
       when {
                 expression { choice == '1'}
             }
@@ -33,6 +33,13 @@ stages {
                 sh 'cd uaa-gitlab && ./mvnw package -Pprod -DskipTests jib:dockerBuild'
             }
         } 
- 
+   stage ('5 choice') {
+      when {
+                expression { choice == '5'}
+            }
+            steps {
+                sh 'cd gateway-gitlab && ./mvnw package -Pprod -DskipTests jib:dockerBuild'
+            }
+        }  
   }
 }
