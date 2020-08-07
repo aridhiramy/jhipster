@@ -30,9 +30,7 @@ stages {
                 expression { choice == 'Packaging UAA MS'}
             }
             steps {
-                sh 'cd uaa-gitlab && ./mvnw package -Pprod -DskipTests jib:dockerBuild'
-                sh 'docker image tag uaa 172.16.23.89:5000/uaa:2.0'
-                sh 'docker push 172.16.23.89:5000/uaa:2.0'  
+                sh 'cd uaa-gitlab && ./mvnw package -Pprod -DskipTests jib:dockerBuild && docker image tag uaa 172.16.23.89:5000/uaa:2.0 && docker push 172.16.23.89:5000/uaa:2.0'  
             }
         } 
    stage ('Packaging GATEWAY MS') {
@@ -40,9 +38,7 @@ stages {
                 expression { choice == 'Packaging GATEWAY MS'}
             }
             steps {
-                sh 'cd gateway-gitlab && ./mvnw package -Pprod -DskipTests jib:dockerBuild'
-                sh 'docker image tag gateway 172.16.23.89:5000/gateway:2.0'
-                sh 'docker push 172.16.23.89:5000/gateway:2.0'
+                sh 'cd gateway-gitlab && ./mvnw package -Pprod -DskipTests jib:dockerBuild && docker image tag gateway 172.16.23.89:5000/gateway:2.0 && docker push 172.16.23.89:5000/gateway:2.0'
             }
         }
    stage ('Generate K8s Deployment') {
