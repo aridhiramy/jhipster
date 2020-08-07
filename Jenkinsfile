@@ -54,7 +54,11 @@ stages {
                 expression { choice == 'Deploy To K8s'}
             }
             steps {
-                sh 'kubernetes/kubectl-apply.sh -f'
+                    withKubeConfig([credentialsId: 'kubeconfig1',
+                    serverUrl: 'https://172.16.23.77:6443'
+                    ]) {
+                sh 'kubectl get pods'
+                }
             }
         }
   }
