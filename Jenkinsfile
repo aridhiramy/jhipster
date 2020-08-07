@@ -27,7 +27,7 @@ stages {
         }
    stage ('4 choice') {
       when {
-                expression { choice == '3'}
+                expression { choice == '4'}
             }
             steps {
                 sh 'cd uaa-gitlab && ./mvnw package -Pprod -DskipTests jib:dockerBuild'
