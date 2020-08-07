@@ -46,7 +46,7 @@ spec:
               done
       containers:
         - name: uaa-app
-          image: 172.16.23.89:5000/uaa
+          image: 172.16.23.89:5000/uaa:2.0
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
