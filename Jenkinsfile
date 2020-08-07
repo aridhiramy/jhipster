@@ -54,10 +54,10 @@ stages {
                 expression { choice == 'Deploy To K8s'}
             }
             steps {
-                    withKubeConfig([credentialsId: 'kubeconfig1',
+                    withKubeConfig([credentialsId: 'kube',
                     serverUrl: 'https://172.16.23.77:6443'
                     ]) {
-                sh 'kubectl get pods'
+                sh 'kubectl get pods --all-namespaces'
                 }
             }
         }
