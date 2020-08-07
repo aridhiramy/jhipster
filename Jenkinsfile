@@ -3,39 +3,39 @@ pipeline {
 stages {
     stage ('Checkout SCM') {
       when {
-                expression { choice == '1'}
+                expression { choice == 'Checkout SCM'}
             }
             steps {
                 git 'https://github.com/aridhiramy/jhipster.git'
             }
     }
-    stage ('2 choice') {
+    stage ('Test & Build UAA MS') {
       when {
-                expression { choice == '2'}
+                expression { choice == 'Test & Build UAA MS'}
             }
             steps {
                 sh 'cd uaa-gitlab && ./mvnw -Pprod clean verify'
             }
     }
-   stage ('3 choice') {
+   stage ('Test & Build GATEWAY MS') {
       when {
-                expression { choice == '3'}
+                expression { choice == 'Test & Build GATEWAY MS'}
             }
             steps {
                 sh 'cd gateway-gitlab && ./mvnw -Pprod clean verify'
             }
         }
-   stage ('4 choice') {
+   stage ('Packaging UAA MS') {
       when {
-                expression { choice == '4'}
+                expression { choice == 'Packaging UAA MS'}
             }
             steps {
                 sh 'cd uaa-gitlab && ./mvnw package -Pprod -DskipTests jib:dockerBuild'
             }
         } 
-   stage ('5 choice') {
+   stage ('Packaging GATEWAY MS') {
       when {
-                expression { choice == '5'}
+                expression { choice == 'Packaging GATEWAY MS'}
             }
             steps {
                 sh 'cd gateway-gitlab && ./mvnw package -Pprod -DskipTests jib:dockerBuild'
