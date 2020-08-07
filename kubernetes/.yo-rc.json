@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "deploymentType": "kubernetes",
+    "gatewayType": "zuul",
+    "monitoring": "no",
+    "directoryPath": "../",
+    "appsFolders": ["gateway-gitlab", "uaa-gitlab"],
+    "clusteredDbApps": [],
+    "consoleOptions": [],
+    "serviceDiscoveryType": false,
+    "dockerRepositoryName": "172.16.23.89:5000",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "jhipster",
+    "kubernetesServiceType": "Ingress",
+    "ingressDomain": "172.16.23.77",
+    "istio": true,
+    "jwtSecretKey": "NjVkYjQxNTAxOTM3NTg0ZjMxOWZiZjYwMjg5MjViMTE4NDNlNjc4NTc1MjVhMjRmOTJmYjdjZDdkNTgyNzk3ODFhYjM1YzE3ZTQ0NGIwNzQ4YWRjYTk4NmFkZDZlNDUwYjUxOA=="
+  }
+}

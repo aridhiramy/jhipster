@@ -91,7 +91,7 @@ describe('Service Tests', () => {
       it('should call /account if user is undefined', () => {
         service.identity().subscribe();
         const req = httpMock.expectOne({ method: 'GET' });
-        const resourceUrl = SERVER_API_URL + 'services/jhipster/api/account';
+        const resourceUrl = SERVER_API_URL + 'services/uaa/api/account';
 
         expect(req.request.url).toEqual(`${resourceUrl}`);
       });

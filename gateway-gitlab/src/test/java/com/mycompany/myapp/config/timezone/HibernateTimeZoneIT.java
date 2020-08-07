@@ -1,6 +1,6 @@
 package com.mycompany.myapp.config.timezone;
 
-import com.mycompany.myapp.JhipsterApp;
+import com.mycompany.myapp.GatewayApp;
 import com.mycompany.myapp.config.SecurityBeanOverrideConfiguration;
 import com.mycompany.myapp.repository.timezone.DateTimeWrapper;
 import com.mycompany.myapp.repository.timezone.DateTimeWrapperRepository;
@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for the ZoneId Hibernate configuration.
  */
-@SpringBootTest(classes = {SecurityBeanOverrideConfiguration.class, JhipsterApp.class})
+@SpringBootTest(classes = {SecurityBeanOverrideConfiguration.class, GatewayApp.class})
 public class HibernateTimeZoneIT {
 
     @Autowired

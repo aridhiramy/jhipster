@@ -1,6 +1,6 @@
 package com.mycompany.myapp.web.rest;
 
-import com.mycompany.myapp.JhipsterApp;
+import com.mycompany.myapp.UaaApp;
 import com.mycompany.myapp.config.Constants;
 import com.mycompany.myapp.domain.User;
 import com.mycompany.myapp.repository.AuthorityRepository;
@@ -38,7 +38,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @AutoConfigureMockMvc
 @WithMockUser(value = TEST_USER_LOGIN)
-@SpringBootTest(classes = JhipsterApp.class)
+@SpringBootTest(classes = UaaApp.class)
 public class AccountResourceIT {
     static final String TEST_USER_LOGIN = "test";
 

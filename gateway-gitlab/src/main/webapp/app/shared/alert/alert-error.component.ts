@@ -21,12 +21,12 @@ export class AlertErrorComponent implements OnDestroy {
   httpErrorListener: Subscription;
 
   constructor(private alertService: JhiAlertService, private eventManager: JhiEventManager) {
-    this.errorListener = eventManager.subscribe('jhipsterApp.error', (response: JhiEventWithContent<AlertError>) => {
+    this.errorListener = eventManager.subscribe('gatewayApp.error', (response: JhiEventWithContent<AlertError>) => {
       const errorResponse = response.content;
       this.addErrorAlert(errorResponse.message);
     });
 
-    this.httpErrorListener = eventManager.subscribe('jhipsterApp.httpError', (response: JhiEventWithContent<HttpErrorResponse>) => {
+    this.httpErrorListener = eventManager.subscribe('gatewayApp.httpError', (response: JhiEventWithContent<HttpErrorResponse>) => {
       const httpErrorResponse = response.content;
       switch (httpErrorResponse.status) {
         // connection refused, server not reachable

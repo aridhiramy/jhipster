@@ -1,0 +1,15 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: 172.16.23.89:5000/gateway
+      context: ../gateway-gitlab
+      jib: {}
+    - image: 172.16.23.89:5000/uaa
+      context: ../uaa-gitlab
+      jib: {}
+  tagPolicy:
+    envTemplate:
+      template: '{{.IMAGE_NAME}}:latest'
+deploy:
+  kustomize: {}

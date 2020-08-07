@@ -1,6 +1,6 @@
 package com.mycompany.myapp.web.rest.errors;
 
-import com.mycompany.myapp.JhipsterApp;
+import com.mycompany.myapp.GatewayApp;
 import com.mycompany.myapp.config.SecurityBeanOverrideConfiguration;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @WithMockUser
 @AutoConfigureMockMvc
-@SpringBootTest(classes = {SecurityBeanOverrideConfiguration.class, JhipsterApp.class})
+@SpringBootTest(classes = {SecurityBeanOverrideConfiguration.class, GatewayApp.class})
 public class ExceptionTranslatorIT {
 
     @Autowired

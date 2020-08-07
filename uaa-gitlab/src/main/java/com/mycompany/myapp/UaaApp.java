@@ -22,18 +22,18 @@ import java.util.Collection;
 
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
-public class JhipsterApp {
+public class UaaApp {
 
-    private static final Logger log = LoggerFactory.getLogger(JhipsterApp.class);
+    private static final Logger log = LoggerFactory.getLogger(UaaApp.class);
 
     private final Environment env;
 
-    public JhipsterApp(Environment env) {
+    public UaaApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes jhipster.
+     * Initializes uaa.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>
@@ -58,7 +58,7 @@ public class JhipsterApp {
      * @param args the command line arguments.
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(JhipsterApp.class);
+        SpringApplication app = new SpringApplication(UaaApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);

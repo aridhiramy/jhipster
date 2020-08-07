@@ -1,6 +1,6 @@
 package com.mycompany.myapp.web.rest;
 
-import com.mycompany.myapp.JhipsterApp;
+import com.mycompany.myapp.UaaApp;
 import com.mycompany.myapp.domain.PersistentAuditEvent;
 import com.mycompany.myapp.repository.PersistenceAuditEventRepository;
 import com.mycompany.myapp.security.AuthoritiesConstants;
@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @AutoConfigureMockMvc
 @WithMockUser(authorities = AuthoritiesConstants.ADMIN)
-@SpringBootTest(classes = JhipsterApp.class)
+@SpringBootTest(classes = UaaApp.class)
 @Transactional
 public class AuditResourceIT {
 

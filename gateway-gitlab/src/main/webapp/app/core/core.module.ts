@@ -54,7 +54,7 @@ import { fontAwesomeIcons } from './icons/font-awesome-icons';
     },
   ],
 })
-export class JhipsterCoreModule {
+export class GatewayCoreModule {
   constructor(iconLibrary: FaIconLibrary, dpConfig: NgbDatepickerConfig) {
     registerLocaleData(locale);
     iconLibrary.addIcons(...fontAwesomeIcons);

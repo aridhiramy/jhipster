@@ -1,6 +1,6 @@
 package com.mycompany.myapp.repository;
 
-import com.mycompany.myapp.JhipsterApp;
+import com.mycompany.myapp.UaaApp;
 
 import com.mycompany.myapp.config.Constants;
 import com.mycompany.myapp.config.audit.AuditEventConverter;
@@ -28,7 +28,7 @@ import static com.mycompany.myapp.repository.CustomAuditEventRepository.EVENT_DA
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = JhipsterApp.class)
+@SpringBootTest(classes = UaaApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

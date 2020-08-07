@@ -1,0 +1,73 @@
+commonLabels:
+  app.kubernetes.io/genereted-by: JHipster
+
+namespace: jhipster
+
+resources:
+  - namespace.yml
+  # Individual apps
+  - gateway-k8s/gateway-deployment.yml
+  - gateway-k8s/gateway-service.yml
+  - gateway-k8s/gateway-mysql.yml
+  - gateway-k8s/gateway-gateway.yml
+  - gateway-k8s/gateway-destination-rule.yml
+  - gateway-k8s/gateway-virtual-service.yml
+  - uaa-k8s/uaa-deployment.yml
+  - uaa-k8s/uaa-service.yml
+  - uaa-k8s/uaa-mysql.yml
+  - uaa-k8s/uaa-destination-rule.yml
+  - uaa-k8s/uaa-virtual-service.yml
+  # service discovery eureka/consul
+  # istio
+  - istio-k8s/grafana-gateway.yml
+  - istio-k8s/zipkin-gateway.yml
+  - istio-k8s/kiali-gateway.yml
+
+patchesJson6902:
+  - target:
+      version: v1
+      kind: Namespace
+      name: jhipster
+    path: patch-k8s/istio-label.yml
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      kind: Gateway
+      name: grafana-observability-gateway
+      namespace: jhipster
+    path: patch-k8s/istio-namespace.yml
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      name: grafana-gw-virtualservice
+      kind: VirtualService
+      namespace: jhipster
+    path: patch-k8s/istio-namespace.yml
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      kind: Gateway
+      name: kiali-observability-gateway
+      namespace: jhipster
+    path: patch-k8s/istio-namespace.yml
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      name: kiali-gw-virtualservice
+      kind: VirtualService
+      namespace: jhipster
+    path: patch-k8s/istio-namespace.yml
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      kind: Gateway
+      name: zipkin-observability-gateway
+      namespace: jhipster
+    path: patch-k8s/istio-namespace.yml
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      name: zipkin-gw-virtualservice
+      kind: VirtualService
+      namespace: jhipster
+    path: patch-k8s/istio-namespace.yml

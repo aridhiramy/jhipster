@@ -1,0 +1,10 @@
+deployment {
+  deploymentType kubernetes
+  appsFolders [gateway-gitlab, uaa-gitlab]
+  dockerRepositoryName "172.16.23.89:5000"
+  serviceDiscoveryType no
+  istio true
+  kubernetesServiceType Ingress
+  kubernetesNamespace jhipster
+  ingressDomain "172.16.23.77"
+}

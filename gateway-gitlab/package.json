@@ -1,7 +1,7 @@
 {
-  "name": "jhipster",
+  "name": "gateway",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for jhipster",
+  "description": "Description for gateway",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [
@@ -23,6 +23,7 @@
     "@ngx-translate/core": "12.1.2",
     "@ngx-translate/http-loader": "5.0.0",
     "bootstrap": "4.5.0",
+    "bootswatch": "4.5.0",
     "moment": "2.27.0",
     "ng-jhipster": "0.14.0",
     "ngx-cookie-service": "3.0.4",
