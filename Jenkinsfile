@@ -49,6 +49,13 @@ stages {
                 sh 'jhipster import-jdl k8s-deployment.jdl'
             }
         }
-
+   stage ('Deploy To K8s') {
+      when {
+                expression { choice == 'Deploy To K8s'}
+            }
+            steps {
+                sh 'kubernetes/kubectl-apply.sh -f'
+            }
+        }
   }
 }
