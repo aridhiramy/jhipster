@@ -4,7 +4,7 @@ pipeline {
     //     gitParameter branchFilter: 'origin /(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
     // }
 stages {
-    stage ('Checkout scm') {
+    stage ('Checkout SCM') {
     //   when {
     //             expression { choice == 'Checkout SCM'}
     //         }
