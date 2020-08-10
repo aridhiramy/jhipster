@@ -1,12 +1,15 @@
 pipeline {
     agent any
+    parameters {
+        gitParameter branchFilter: 'origin /(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
+    }
 stages {
     stage ('Checkout SCM') {
     //   when {
     //             expression { choice == 'Checkout SCM'}
     //         }
             steps {
-                git 'https://github.com/aridhiramy/jhipster.git'
+                git branch: "${params.BRANCH}", url: 'https://github.com/aridhiramy/jhipster.git'
             }
     }
     stage ('Test & Build UAA MS') {
