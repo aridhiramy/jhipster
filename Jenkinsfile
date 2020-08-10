@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    // parameters {
-    //     gitParameter branchFilter: 'origin /(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
-    // }
 stages {
     stage ('Checkout SCM') {
     //   when {
@@ -13,9 +10,9 @@ stages {
             }
     }
     stage ('Test & Build UAA MS') {
-      when {
-                branch 'master'
-            }
+    //   when {
+    //             expression { choice == 'Test & Build UAA MS'}
+    //         }
             steps {
                 sh 'cd uaa-gitlab && ./mvnw -Pprod clean verify'
             }
